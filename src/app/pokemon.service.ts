@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {catchError, tap} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
 
-  httpOptions = {
-    headers:new HttpHeaders({'Content-Type':'application/json'})
-  }
 
   constructor(private http:HttpClient) { }
 
@@ -26,6 +24,9 @@ export class PokemonService {
 
   private URL = 'https://pokeapi.co/api/v2/pokemon'
   getPokemons():Observable<any>{
-    return this.http.get<any>(this.URL);
+    return this.http.get<any>(this.URL)
+      .pipe(
+        tap(_=>console.log("success")),
+        catchError(this.handleError<any>("failed")))
   }
 }
