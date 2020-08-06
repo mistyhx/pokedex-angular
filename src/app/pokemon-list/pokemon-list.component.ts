@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {PokemonService} from "../pokemon.service";
 
 @Component({
@@ -9,7 +9,7 @@ import {PokemonService} from "../pokemon.service";
 export class PokemonListComponent implements OnInit {
 
   pokemons:Array<any> = [];
-
+  selectedPokemon: any;
   constructor(private pokemonService:PokemonService) { }
 
   ngOnInit(): void {
@@ -22,5 +22,9 @@ export class PokemonListComponent implements OnInit {
 
   }
 
+  onSelect(pokemon:any):void{
+       this.selectedPokemon = pokemon;
+       console.log(this.selectedPokemon);
+  }
 
 }
