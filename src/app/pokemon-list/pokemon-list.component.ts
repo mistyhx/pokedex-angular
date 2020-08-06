@@ -24,7 +24,12 @@ export class PokemonListComponent implements OnInit {
 
   onSelect(pokemon:any):void{
        this.selectedPokemon = pokemon;
-       console.log(this.selectedPokemon);
+       this.getPokemon()
+  }
+
+  getPokemon():void{
+    this.pokemonService.getPokemon(this.selectedPokemon.url)
+      .subscribe(selectedPokemon => this.selectedPokemon = selectedPokemon)
   }
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from "rxjs";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {catchError, tap} from "rxjs/operators";
 
 @Injectable({
@@ -28,5 +28,12 @@ export class PokemonService {
       .pipe(
         tap(_=>console.log("success")),
         catchError(this.handleError<any>("failed")))
+  }
+
+  getPokemon(url:string):Observable<any>{
+    return this.http.get<any>(url).pipe(
+      tap(_=>console.log("get pokemon")),
+      catchError(this.handleError<any>('failed getting pokemon'))
+    )
   }
 }
