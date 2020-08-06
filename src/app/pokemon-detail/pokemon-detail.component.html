@@ -1,5 +1,8 @@
 <div *ngIf="pokemon">
+  <div *ngIf="pokemon.id">
+  <img src={{pokemon.sprites.front_default}} alt={{pokemon.name}}/>
   <div>{{pokemon.name}}</div>
   <div>{{pokemon.id}}</div>
   <div>{{pokemon.weight}}</div>
+  </div>
 </div>
