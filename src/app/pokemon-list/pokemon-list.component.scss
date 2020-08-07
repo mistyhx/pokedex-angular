@@ -5,6 +5,9 @@
 .container{
   display:flex;
   flex-direction: row;
+  justify-content: center;
+  padding-top:12%;
+
 
   [class *="panel"]{
     background-color:$primary-red;
@@ -90,6 +93,7 @@ ul{
       width:300px;
       height:160px;
       overflow: scroll;
+      cursor:pointer;
 
       li{
         padding:0.5rem 0;
