@@ -1,7 +1,35 @@
-<ul>
-  <li (click)="onSelect(pokemon)" *ngFor="let pokemon of pokemons">
-    {{pokemon.name}}
-  </li>
-</ul>
+<div class="container">
+  <div class="left-panel">
 
-<app-pokemon-detail [pokemon] = "selectedPokemon"></app-pokemon-detail>
+    <app-pokemon-detail [pokemon] = "selectedPokemon"></app-pokemon-detail>
+  </div>
+  <div class="middle-bar"></div>
+  <div class="right-panel">
+    <ul class="screen">
+      <li (click)="onSelect(pokemon)" *ngFor="let pokemon of pokemons; let i = index">
+        NO. {{i+1}} {{pokemon.name}}
+      </li>
+    </ul>
+
+    <ul class="blue-button-group">
+      <li class="blue-button" *ngFor="let i of [].constructor(10)">
+      </li>
+    </ul>
+    <div class="black-bars">
+      <div *ngFor="let i of [].constructor(2)" class="black-bar"></div>
+    </div>
+
+    <div class="secondary-controls">
+      <div class="white-button-group">
+        <div *ngFor="let i of [].constructor(2)" class="white-button"></div>
+      </div>
+      <div class="yellow-button">
+      </div>
+    </div>
+
+    <div class="speakers">
+      <div *ngFor="let i of [].constructor(2)" class="speaker"></div>
+    </div>
+
+  </div>
+</div>
