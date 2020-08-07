@@ -1,0 +1,39 @@
+@import "../styles/globalStyle";
+
+
+.screen-border{
+  background-color:$border-grey;
+  padding:2rem 3rem;
+  border-radius: $normal-radius;
+  border-bottom-left-radius: 50px;
+  border:$border-width solid black;
+  .pokemon-screen{
+    height:200px;
+    width:260px;
+    background-color:white;
+    border: $border-width solid black;
+    border-radius: $normal-radius;
+
+    .screen-content{
+      display: flex;
+      flex-direction: column;
+      img{margin-left:18%}
+      .meta-data{
+
+        span{
+          font-weight:600;
+        }
+        div{
+          padding-left:0.4rem;
+          text-transform: capitalize;
+        }
+        display: flex;
+        justify-content: center;
+        background-color:$blue;
+        padding:0.5rem;
+      }
+    }
+
+  }
+}
+

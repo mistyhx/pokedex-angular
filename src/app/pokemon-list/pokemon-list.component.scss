@@ -5,13 +5,38 @@
 .container{
   display:flex;
   flex-direction: row;
+
+  [class *="panel"]{
+    background-color:$primary-red;
+    border-radius:$normal-radius;
+
+  }
 }
 
 ul{
   list-style: none;
 }
-.right{
 
+.left{
+  width:468px;
+  background-color:$primary-red;
+  border-radius: $normal-radius;
+
+  .left-panel{
+    padding:1rem;
+    display: flex;
+    justify-content: center;
+    padding-top:4rem;
+  }
+}
+
+.middle-bar{
+  min-width:60px;
+  background-color:darken($primary-red,10%);
+  border-radius: $small-radius;
+}
+.right{
+   width:468px;
   .right-top{
     border-bottom: 62px solid $primary-red;
     border-right: 25px solid transparent;
@@ -23,8 +48,7 @@ ul{
   }
   .right-panel{
     padding:4rem;
-    background-color:$primary-red;
-    border-radius:$normal-radius;
+    height:540px;
 
     .screen{
       padding:1rem;
