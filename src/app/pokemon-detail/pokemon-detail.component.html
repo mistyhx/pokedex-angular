@@ -1,5 +1,32 @@
-<div *ngIf="pokemon">
-  <div>{{pokemon.name}}</div>
-  <div>{{pokemon.id}}</div>
-  <div>{{pokemon.weight}}</div>
+<div class="container">
+  <div class="screen-border">
+      <div class="pokemon-screen">
+      <div *ngIf="pokemon">
+        <div class="screen-content" *ngIf="pokemon.id">
+          <img src={{pokemon.sprites.front_default}} alt={{pokemon.name}} width="166"/>
+          <div class="meta-data">
+            <span>Types:</span>
+            <div *ngFor="let type of pokemon.types">{{type.type.name}}</div>
+          </div>
+          </div>
+      </div>
+      </div>
+    <div class="screen-controls">
+      <div class="red-button"></div>
+      <div class="stripes">
+        <div *ngFor="let i of [].constructor(3)"></div>
+      </div>
+    </div>
+  </div>
+  <div class="lights">
+    <div *ngFor="let i of [].constructor(2)"></div>
+  </div>
+  <div class="bottom-controller">
+    <div class="black-circle"></div>
+    <div class="mini-screen"></div>
+    <div class="moves">
+      <div class="move-horizontal"></div>
+      <div class="move-vertical"></div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,120 @@
+@import "../styles/globalStyle";
+
+.screen-border{
+  background-color:$border-grey;
+  padding:1rem 2rem 0.5rem 2rem;
+  border-radius: $normal-radius;
+  border-bottom-left-radius: 50px;
+  border:$border-width solid black;
+  .pokemon-screen{
+    height:200px;
+    width:260px;
+    background-color:white;
+    border: $border-width solid black;
+    border-radius: $normal-radius;
+
+    .screen-content{
+      display: flex;
+      flex-direction: column;
+      img{margin-left:18%}
+      .meta-data{
+
+        span{
+          font-weight:600;
+        }
+        div{
+          padding-left:0.4rem;
+          text-transform: capitalize;
+        }
+        display: flex;
+        justify-content: center;
+        background-color:$blue;
+        padding:0.5rem;
+      }
+    }
+
+  }
+
+  .screen-controls{
+     display: flex;
+     justify-content: space-between;
+     padding:0.5rem 0;
+    .red-button{
+      height:30px;
+      width:30px;
+      border:$border-width solid black;
+      background-color:$primary-red;
+      border-radius:$circle;
+    }
+
+    .stripes{
+      div{
+        width:100px;
+        height:4px;
+        margin-top:0.2rem;
+        border-radius: $normal-radius;
+        background-color:black;
+      }
+    }
+  }
+
+}
+
+.lights{
+  display: flex;
+  justify-content: center;
+  margin-top:1rem;
+  div{
+    width:100px;
+    height:8px;
+    border-radius: $normal-radius;
+    margin:0.5rem;
+  }
+  div:first-child{
+    background-color:$orange
+  }
+  div:last-child{
+    background-color:$screen-green;
+  }
+}
+
+.bottom-controller{
+  display:flex;
+  justify-content: space-between;
+  padding:2rem;
+  overflow: hidden;
+  height:100px;
+  margin-top:2rem;
+  .black-circle{
+    width:50px;
+    height:50px;
+    background-color:black;
+    border-radius: $circle;
+  }
+
+  .mini-screen{
+    width:120px;
+    height:60px;
+    background-color:$screen-green;
+    border-radius: $normal-radius;
+    border:$small-border-width solid black;
+  }
+
+  .moves{
+    [class *="move-"]{
+      height:80px;
+      width:30px;
+      background-color:black;
+    }
+    .move-horizontal{
+      transform: rotate(90deg);
+    }
+
+    .move-vertical{
+      transform: translateY(-80px);
+    }
+  }
+
+
+}
+

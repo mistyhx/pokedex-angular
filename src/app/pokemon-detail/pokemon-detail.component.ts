@@ -8,8 +8,6 @@ import {PokemonService} from "../pokemon.service";
 })
 export class PokemonDetailComponent implements OnInit {
 
-  pokemonDetail:any;
-
   @Input() pokemon:any;
 
   constructor(private pokemonService:PokemonService) { }
